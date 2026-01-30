@@ -1,4 +1,4 @@
-@import "../../../design-tokens/src/styles.css";
+@import "./tokens.css";
 
 html,
 body {

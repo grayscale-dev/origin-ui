@@ -57,9 +57,7 @@
     "test": "stencil build --docs && vitest run",
     "test:watch": "vitest"
   },
-  "dependencies": {
-    "@signal-web-ui/design-tokens": "workspace:*"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@signal-web-ui/tsconfig": "workspace:*",
     "@stencil/angular-output-target": "^1.3.0",
