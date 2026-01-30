@@ -11,4 +11,9 @@ if ! npm whoami >/dev/null 2>&1; then
   exit 0
 fi
 
+if ! npm org ls signal-ui >/dev/null 2>&1; then
+  echo "NPM org 'signal-ui' not accessible. Skipping publish."
+  exit 0
+fi
+
 pnpm release
