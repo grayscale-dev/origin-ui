@@ -1,5 +1,11 @@
 # @signal-ui/eslint-config
 
+## 0.1.4
+
+### Patch Changes
+
+- 9f13e24: Fix
+
 ## 0.1.3
 
 ### Patch Changes
