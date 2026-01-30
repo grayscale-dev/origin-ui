@@ -1,5 +1,13 @@
 # @signal-ui/angular
 
+## 0.1.4
+
+### Patch Changes
+
+- 9f13e24: Fix
+- Updated dependencies [9f13e24]
+  - @signal-ui/core@0.1.4
+
 ## 0.1.3
 
 ### Patch Changes
