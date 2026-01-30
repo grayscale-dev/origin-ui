@@ -1,5 +1,11 @@
 # @signal-web-ui/tsconfig
 
+## 0.1.5
+
+### Patch Changes
+
+- 7f4c6ba: Fix
+
 ## 0.1.4
 
 ### Patch Changes

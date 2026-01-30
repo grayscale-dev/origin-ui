@@ -1,6 +1,6 @@
 {
   "name": "@signal-web-ui/eslint-config",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": true,
   "main": "index.js",
   "peerDependencies": {
