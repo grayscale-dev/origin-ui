@@ -8,6 +8,8 @@ export function initialize() {
   applyPolyfills().then(() => defineCustomElements());
 }
 
-export default {
+const initializer = {
   initialize
 };
+
+export default initializer;
