@@ -1,5 +1,12 @@
 # @signal-web-ui/core
 
+## 0.1.6
+
+### Patch Changes
+
+- 7201f0d: add documentation for signal-button, signal-combobox, signal-input, signal-modal, and signal-table components
+  - @signal-web-ui/design-tokens@0.1.6
+
 ## 0.1.5
 
 ### Patch Changes

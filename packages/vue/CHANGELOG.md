@@ -1,5 +1,12 @@
 # @signal-web-ui/vue
 
+## 0.1.6
+
+### Patch Changes
+
+- Updated dependencies [7201f0d]
+  - @signal-web-ui/core@0.1.6
+
 ## 0.1.5
 
 ### Patch Changes
