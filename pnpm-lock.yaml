@@ -44,10 +44,6 @@ importers:
         version: 5.9.3
 
   packages/core:
-    dependencies:
-      '@signal-web-ui/design-tokens':
-        specifier: workspace:*
-        version: link:../design-tokens
     devDependencies:
       '@signal-web-ui/tsconfig':
         specifier: workspace:*
