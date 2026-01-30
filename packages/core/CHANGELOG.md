@@ -1,5 +1,11 @@
 # @signal-web-ui/core
 
+## 0.1.8
+
+### Patch Changes
+
+- 3636e8f: Add docs to files
+
 ## 0.1.7
 
 ### Patch Changes
