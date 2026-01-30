@@ -19,7 +19,6 @@ import { defineCustomElement as defineSignalTable } from '@signal-ui/core/dist/c
   selector: 'signal-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['disabled', 'loading', 'size', 'type', 'variant'],
 })
 export class SignalButton {
@@ -42,7 +41,6 @@ export declare interface SignalButton extends Components.SignalButton {}
   selector: 'signal-combobox',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['clearable', 'closeOnSelect', 'creatable', 'defaultValue', 'disabled', 'loading', 'maxSelected', 'mode', 'options', 'placeholder', 'searchable', 'value'],
   outputs: ['valueChange', 'openChange', 'queryChange', 'clear'],
 })
@@ -79,7 +77,6 @@ export declare interface SignalCombobox extends Components.SignalCombobox {
   selector: 'signal-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['autocomplete', 'disabled', 'inset', 'name', 'placeholder', 'readonly', 'required', 'type', 'value'],
   outputs: ['valueInput', 'valueChange'],
 })
@@ -110,7 +107,6 @@ export declare interface SignalInput extends Components.SignalInput {
   selector: 'signal-modal',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['closeOnBackdrop', 'closeOnEsc', 'confirmText', 'defaultPosition', 'defaultSize', 'description', 'dragEnabled', 'fullscreen', 'heading', 'maxSize', 'minSize', 'open', 'resizable', 'showConfirm', 'showHeaderControls', 'size'],
   outputs: ['openChange', 'close', 'confirm'],
 })
@@ -144,7 +140,6 @@ export declare interface SignalModal extends Components.SignalModal {
   selector: 'signal-table',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['caption', 'columns', 'emptyText', 'filterable', 'filters', 'loading', 'reorderable', 'rowKey', 'rows', 'searchable'],
   outputs: ['rowClick', 'reorder', 'searchChange', 'filterChange'],
 })
@@ -171,5 +166,4 @@ export declare interface SignalTable extends Components.SignalTable {
 
   filterChange: EventEmitter<CustomEvent<{ filters: Record<string, string> }>>;
 }
-
 
