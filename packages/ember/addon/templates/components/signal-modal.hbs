@@ -1,0 +1,24 @@
+<signal-modal
+  {{did-insert this.setup}}
+  {{did-update this.syncProps
+    @open
+    @heading
+    @description
+    @size
+    @closeOnBackdrop
+    @closeOnEsc
+    @dragEnabled
+    @resizable
+    @fullscreen
+    @showHeaderControls
+    @showConfirm
+    @confirmText
+    @defaultSize
+    @minSize
+    @maxSize
+    @defaultPosition
+  }}
+  ...attributes
+>
+  {{yield}}
+</signal-modal>

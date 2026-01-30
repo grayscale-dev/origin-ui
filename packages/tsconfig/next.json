@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "moduleResolution": "Bundler",
+    "allowJs": true,
+    "noEmit": true,
+    "plugins": [{ "name": "next" }],
+    "paths": {
+      "@signal-ui/core": ["../core/src"],
+      "@signal-ui/core/*": ["../core/src/*"],
+      "@signal-ui/design-tokens": ["../design-tokens/src"],
+      "@signal-ui/design-tokens/*": ["../design-tokens/src/*"],
+      "@signal-ui/eslint-config": ["../eslint-config/index.js"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,143 @@
+:host {
+  display: block;
+  font-family: var(--signal-font-sans);
+  position: relative;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--signal-space-2);
+}
+
+.control {
+  position: relative;
+}
+
+.trigger {
+  align-items: center;
+  background: var(--signal-color-surface);
+  border: 1px solid var(--signal-color-border);
+  border-radius: var(--signal-radius-md);
+  color: var(--signal-color-text);
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  font-size: 13px;
+  justify-content: space-between;
+  padding: 8px 14px;
+  width: 100%;
+}
+
+.trigger:focus-visible {
+  box-shadow: var(--signal-shadow-focus);
+  outline: none;
+}
+
+.value.placeholder {
+  color: var(--signal-color-subtle);
+}
+
+.caret {
+  color: var(--signal-color-subtle);
+  margin-left: var(--signal-space-2);
+}
+
+.input {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--signal-radius-md);
+  border: 1px solid var(--signal-color-accent);
+  background: var(--signal-color-surface);
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--signal-color-text);
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: var(--signal-shadow-focus);
+}
+
+.clear {
+  position: absolute;
+  right: 34px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--signal-color-subtle);
+  cursor: pointer;
+  font-size: 11px;
+  padding: 2px 6px;
+}
+
+.clear:hover {
+  background: var(--signal-color-muted);
+  border-radius: var(--signal-radius-sm);
+}
+
+.listbox {
+  border: 1px solid var(--signal-color-border);
+  border-radius: var(--signal-radius-md);
+  background: var(--signal-color-surface);
+  box-shadow: var(--signal-shadow-strong);
+  max-height: 280px;
+  overflow: auto;
+  padding: var(--signal-space-1) 0;
+}
+
+.option {
+  align-items: center;
+  color: var(--signal-color-text);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.option.active,
+.option:hover {
+  background: var(--signal-color-muted);
+}
+
+.option.selected {
+  font-weight: 600;
+}
+
+.option.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.option.create {
+  font-style: italic;
+}
+
+.option-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.check {
+  color: var(--signal-color-accent);
+  margin-left: var(--signal-space-2);
+}
+
+.empty {
+  padding: 10px 12px;
+  font-size: 12px;
+  color: var(--signal-color-subtle);
+}
+
+:host([disabled]) .trigger {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+:host([disabled]) .input {
+  cursor: not-allowed;
+}

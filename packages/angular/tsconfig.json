@@ -1,0 +1,18 @@
+{
+  "extends": "@signal-ui/tsconfig/library",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "src",
+    "outDir": "dist",
+    "declaration": true,
+    "declarationMap": true,
+    "module": "ESNext",
+    "target": "ES2019",
+    "moduleResolution": "Bundler",
+    "paths": {
+      "@signal-ui/core/dist/custom-elements": ["../core/dist/custom-elements/index.d.ts"],
+      "@signal-ui/core/dist/custom-elements/*": ["../core/dist/custom-elements/*"]
+    }
+  },
+  "include": ["src"]
+}

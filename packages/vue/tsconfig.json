@@ -1,0 +1,13 @@
+{
+  "extends": "@signal-ui/tsconfig/library",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "declaration": true,
+    "declarationMap": true,
+    "module": "ESNext",
+    "target": "ES2019",
+    "moduleResolution": "Bundler"
+  },
+  "include": ["src"]
+}

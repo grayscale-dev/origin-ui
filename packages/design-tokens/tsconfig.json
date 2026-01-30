@@ -1,0 +1,9 @@
+{
+  "extends": "@signal-ui/tsconfig/library",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "include": ["src"],
+  "exclude": ["src/__tests__"]
+}

@@ -1,0 +1,20 @@
+<signal-combobox
+  {{did-insert this.setup}}
+  {{did-update this.syncProps
+    @options
+    @value
+    @defaultValue
+    @mode
+    @placeholder
+    @disabled
+    @loading
+    @clearable
+    @searchable
+    @creatable
+    @maxSelected
+    @closeOnSelect
+  }}
+  ...attributes
+>
+  {{yield}}
+</signal-combobox>

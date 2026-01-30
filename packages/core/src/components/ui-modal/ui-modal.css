@@ -1,0 +1,145 @@
+:host {
+  font-family: var(--signal-font-sans);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--signal-space-4);
+  z-index: 1000;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--signal-color-overlay);
+  backdrop-filter: blur(6px);
+}
+
+.dialog {
+  position: relative;
+  z-index: 1;
+  background: var(--signal-color-surface);
+  border: 1px solid var(--signal-color-border);
+  border-radius: var(--signal-radius-md);
+  box-shadow: var(--signal-shadow-strong);
+  display: flex;
+  flex-direction: column;
+  max-width: calc(100vw - 4rem);
+  max-height: calc(100vh - 4rem);
+  min-width: 320px;
+  overflow: hidden;
+}
+
+:host([size="sm"]) .dialog {
+  width: min(100%, 520px);
+}
+
+:host([size="md"]) .dialog {
+  width: min(100%, 720px);
+}
+
+:host([size="lg"]) .dialog {
+  width: min(100%, 960px);
+}
+
+.dialog.fullscreen {
+  width: calc(100vw - 2rem);
+  height: calc(100vh - 2rem);
+  max-width: none;
+  max-height: none;
+  border-radius: var(--signal-radius-sm);
+}
+
+.header {
+  border-bottom: 1px solid var(--signal-color-border);
+  padding: var(--signal-space-4) var(--signal-space-5);
+  background: var(--signal-color-surface);
+}
+
+.header-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--signal-space-4);
+}
+
+.title {
+  font-size: 15px;
+  margin: 0;
+  color: var(--signal-color-text);
+}
+
+.description {
+  font-size: 13px;
+  margin: 4px 0 0;
+  color: var(--signal-color-subtle);
+}
+
+.header-actions {
+  display: inline-flex;
+  gap: var(--signal-space-2);
+  align-items: center;
+}
+
+.header-button {
+  border: 1px solid var(--signal-color-border);
+  background: var(--signal-color-surface);
+  color: var(--signal-color-subtle);
+  border-radius: var(--signal-radius-sm);
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.close-button {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--signal-radius-sm);
+  border: none;
+  background: transparent;
+  color: var(--signal-color-subtle);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.header-button:hover {
+  background: var(--signal-color-muted);
+}
+
+.close-button:focus-visible,
+.header-button:focus-visible {
+  outline: none;
+  box-shadow: var(--signal-shadow-focus);
+}
+
+.body {
+  padding: var(--signal-space-5);
+  color: var(--signal-color-text);
+  overflow: auto;
+  flex: 1;
+}
+
+.footer {
+  border-top: 1px solid var(--signal-color-border);
+  padding: var(--signal-space-4) var(--signal-space-5);
+  background: var(--signal-color-surface);
+}
+
+.resize-handle {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  width: 14px;
+  height: 14px;
+  cursor: se-resize;
+  background: transparent;
+}
+
+:host([drag-enabled]) .header {
+  cursor: move;
+}

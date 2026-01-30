@@ -1,0 +1,18 @@
+<signal-table
+  {{did-insert this.setup}}
+  {{did-update this.syncProps
+    @columns
+    @rows
+    @caption
+    @rowKey
+    @searchable
+    @filterable
+    @filters
+    @reorderable
+    @loading
+    @emptyText
+  }}
+  ...attributes
+>
+  {{yield}}
+</signal-table>

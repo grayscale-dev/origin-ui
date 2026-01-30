@@ -1,0 +1,52 @@
+{
+  "name": "@signal-ui/ember",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/signal-ui/signal-ui.git",
+    "directory": "packages/ember"
+  },
+  "homepage": "https://github.com/signal-ui/signal-ui",
+  "keywords": [
+    "ember-addon"
+  ],
+  "main": "index.js",
+  "files": [
+    "addon/",
+    "app/",
+    "index.js",
+    "README.md"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "echo \"Ember addon uses app build\"",
+    "lint": "eslint addon app tests --ext .js",
+    "test": "echo \"Run ember test in consuming app\""
+  },
+  "dependencies": {
+    "@signal-ui/core": "workspace:*",
+    "ember-auto-import": "^2.7.2",
+    "@ember/render-modifiers": "^2.1.0"
+  },
+  "peerDependencies": {
+    "ember-source": ">=3.17.0"
+  },
+  "devDependencies": {
+    "@ember/test-helpers": "^2.9.3",
+    "ember-cli-htmlbars": "^6.3.0",
+    "ember-qunit": "^6.2.0",
+    "qunit": "^2.19.4"
+  },
+  "ember-addon": {
+    "type": "addon",
+    "version": 2
+  }
+}

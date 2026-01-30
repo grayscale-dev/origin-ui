@@ -1,0 +1,8 @@
+@import "../../../design-tokens/src/styles.css";
+
+html,
+body {
+  font-family: var(--signal-font-sans);
+  background: var(--signal-color-bg);
+  color: var(--signal-color-text);
+}

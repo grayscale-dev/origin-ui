@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Signal UI CDN Smoke Test</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@signal-ui/core@__VERSION__/dist/signal-ui/signal-ui.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@signal-ui/core@__VERSION__/dist/signal-ui/signal-ui.js"></script>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+        padding: 24px;
+        display: grid;
+        gap: 16px;
+        max-width: 560px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <signal-button id="btn">Click me</signal-button>
+    <signal-input id="input" placeholder="Type to emit valueChange"></signal-input>
+    <signal-combobox id="combo"></signal-combobox>
+
+    <script type="module">
+      const combo = document.querySelector('#combo');
+      combo.options = [
+        { value: 'alpha', label: 'Alpha' },
+        { value: 'beta', label: 'Beta' },
+        { value: 'gamma', label: 'Gamma' }
+      ];
+
+      const input = document.querySelector('#input');
+      input.addEventListener('valueChange', (event) => {
+        console.log('signal-input valueChange', event.detail);
+      });
+    </script>
+  </body>
+</html>
