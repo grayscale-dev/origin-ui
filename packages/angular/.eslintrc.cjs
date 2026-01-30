@@ -1,5 +1,6 @@
 module.exports = {
   extends: ["@signal-web-ui/eslint-config"],
+  ignorePatterns: ["src/directives/proxies.ts"],
   overrides: [
     {
       files: ["src/directives/proxies.ts"],
