@@ -1,5 +1,13 @@
 # @signal-web-ui/vue
 
+## 0.1.11
+
+### Patch Changes
+
+- c0d1d56: Create all the components
+- Updated dependencies [c0d1d56]
+  - @signal-web-ui/core@0.1.11
+
 ## 0.1.10
 
 ### Patch Changes
