@@ -44,6 +44,47 @@ export const SignalCombobox: StencilVueComponent<JSX.SignalCombobox> = /*@__PURE
 ]);
 
 
+export const SignalDataTable: StencilVueComponent<JSX.SignalDataTable> = /*@__PURE__*/ defineContainer<JSX.SignalDataTable>('signal-data-table', undefined, [
+  'columns',
+  'rows',
+  'caption',
+  'emptyText',
+  'getRowId',
+  'rowClick'
+], [
+  'rowClick'
+]);
+
+
+export const SignalFeatureTable: StencilVueComponent<JSX.SignalFeatureTable> = /*@__PURE__*/ defineContainer<JSX.SignalFeatureTable>('signal-feature-table', undefined, [
+  'columns',
+  'rows',
+  'caption',
+  'rowKey',
+  'searchable',
+  'filterable',
+  'selectable',
+  'selectedKeys',
+  'pagination',
+  'emptyText',
+  'filters',
+  'loading',
+  'rowClick',
+  'selectionChanged',
+  'sortChange',
+  'filterChange',
+  'searchChange',
+  'pageChange'
+], [
+  'rowClick',
+  'selectionChanged',
+  'sortChange',
+  'filterChange',
+  'searchChange',
+  'pageChange'
+]);
+
+
 export const SignalFileUpload: StencilVueComponent<JSX.SignalFileUpload> = /*@__PURE__*/ defineContainer<JSX.SignalFileUpload>('signal-file-upload', undefined, [
   'accept',
   'multiple',

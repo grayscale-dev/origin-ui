@@ -1,0 +1,13 @@
+<signal-data-table
+  {{did-insert this.setup}}
+  {{did-update this.syncProps
+    @columns
+    @rows
+    @caption
+    @emptyText
+    @getRowId
+  }}
+  ...attributes
+>
+  {{yield}}
+</signal-data-table>

@@ -8,6 +8,8 @@ import type { Components } from '@signal-web-ui/core/dist/custom-elements';
 
 import { defineCustomElement as defineSignalButton } from '@signal-web-ui/core/dist/custom-elements/signal-button.js';
 import { defineCustomElement as defineSignalCombobox } from '@signal-web-ui/core/dist/custom-elements/signal-combobox.js';
+import { defineCustomElement as defineSignalDataTable } from '@signal-web-ui/core/dist/custom-elements/signal-data-table.js';
+import { defineCustomElement as defineSignalFeatureTable } from '@signal-web-ui/core/dist/custom-elements/signal-feature-table.js';
 import { defineCustomElement as defineSignalFileUpload } from '@signal-web-ui/core/dist/custom-elements/signal-file-upload.js';
 import { defineCustomElement as defineSignalInput } from '@signal-web-ui/core/dist/custom-elements/signal-input.js';
 import { defineCustomElement as defineSignalModal } from '@signal-web-ui/core/dist/custom-elements/signal-modal.js';
@@ -69,6 +71,77 @@ export declare interface SignalCombobox extends Components.SignalCombobox {
   queryChange: EventEmitter<CustomEvent<{ query: string }>>;
 
   clear: EventEmitter<CustomEvent<void>>;
+}
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalDataTable,
+  inputs: ['caption', 'columns', 'emptyText', 'getRowId', 'rows']
+})
+@Component({
+  selector: 'signal-data-table',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['caption', 'columns', 'emptyText', 'getRowId', 'rows'],
+  outputs: ['rowClick'],
+})
+export class SignalDataTable {
+  protected el: HTMLSignalDataTableElement;
+  @Output() rowClick = new EventEmitter<CustomEvent<{ row: Record<string, unknown> }>>();
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalDataTable extends Components.SignalDataTable {
+
+  rowClick: EventEmitter<CustomEvent<{ row: Record<string, unknown> }>>;
+}
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalFeatureTable,
+  inputs: ['caption', 'columns', 'emptyText', 'filterable', 'filters', 'loading', 'pagination', 'rowKey', 'rows', 'searchable', 'selectable', 'selectedKeys']
+})
+@Component({
+  selector: 'signal-feature-table',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['caption', 'columns', 'emptyText', 'filterable', 'filters', 'loading', 'pagination', 'rowKey', 'rows', 'searchable', 'selectable', 'selectedKeys'],
+  outputs: ['rowClick', 'selectionChanged', 'sortChange', 'filterChange', 'searchChange', 'pageChange'],
+})
+export class SignalFeatureTable {
+  protected el: HTMLSignalFeatureTableElement;
+  @Output() rowClick = new EventEmitter<CustomEvent<{ row: Record<string, unknown> }>>();
+  @Output() selectionChanged = new EventEmitter<CustomEvent<{ keys: string[] }>>();
+  @Output() sortChange = new EventEmitter<CustomEvent<{ sort?: { key: string; direction: "asc" | "desc" } }>>();
+  @Output() filterChange = new EventEmitter<CustomEvent<{ filters: Record<string, string> }>>();
+  @Output() searchChange = new EventEmitter<CustomEvent<{ query: string }>>();
+  @Output() pageChange = new EventEmitter<CustomEvent<{ pageIndex: number; pageSize: number }>>();
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalFeatureTable extends Components.SignalFeatureTable {
+
+  rowClick: EventEmitter<CustomEvent<{ row: Record<string, unknown> }>>;
+
+  selectionChanged: EventEmitter<CustomEvent<{ keys: string[] }>>;
+
+  sortChange: EventEmitter<CustomEvent<{ sort?: { key: string; direction: "asc" | "desc" } }>>;
+
+  filterChange: EventEmitter<CustomEvent<{ filters: Record<string, string> }>>;
+
+  searchChange: EventEmitter<CustomEvent<{ query: string }>>;
+
+  pageChange: EventEmitter<CustomEvent<{ pageIndex: number; pageSize: number }>>;
 }
 
 
