@@ -1,5 +1,13 @@
 # @signal-web-ui/ember
 
+## 0.1.10
+
+### Patch Changes
+
+- 591fef5: add SignalDataTable and SignalFeatureTable components
+- Updated dependencies [591fef5]
+  - @signal-web-ui/core@0.1.10
+
 ## 0.1.9
 
 ### Patch Changes
