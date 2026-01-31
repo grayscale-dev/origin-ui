@@ -6,6 +6,7 @@
 /* eslint-disable */
 export { SignalButton } from "./signal-button.js";
 export { SignalCombobox } from "./signal-combobox.js";
+export { SignalFileUpload } from "./signal-file-upload.js";
 export { SignalInput } from "./signal-input.js";
 export { SignalModal } from "./signal-modal.js";
 export { SignalTable } from "./signal-table.js";

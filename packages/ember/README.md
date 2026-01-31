@@ -32,6 +32,7 @@ applyPolyfills().then(() => defineCustomElements());
 Wrappers forward attributes, set properties for non-string values, and map custom events:
 
 - `SignalInput`: `@onValueInput`, `@onValueChange`
+- `SignalFileUpload`: `@onSelect`, `@onUpload`, `@onRemove`
 - `SignalCombobox`: `@onValueChange`, `@onOpenChange`, `@onQueryChange`, `@onClear`
 - `SignalModal`: `@onOpenChange`, `@onClose`, `@onConfirm`
 - `SignalTable`: `@onRowClick`, `@onReorder`, `@onSearchChange`, `@onFilterChange`

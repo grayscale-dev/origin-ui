@@ -44,6 +44,28 @@ export const SignalCombobox: StencilVueComponent<JSX.SignalCombobox> = /*@__PURE
 ]);
 
 
+export const SignalFileUpload: StencilVueComponent<JSX.SignalFileUpload> = /*@__PURE__*/ defineContainer<JSX.SignalFileUpload>('signal-file-upload', undefined, [
+  'accept',
+  'multiple',
+  'maxSize',
+  'maxFiles',
+  'value',
+  'previews',
+  'progress',
+  'disabled',
+  'select',
+  'upload',
+  'remove'
+], [
+  'select',
+  'upload',
+  'remove'
+]);
+
+
+
+
+
 export const SignalInput: StencilVueComponent<JSX.SignalInput> = /*@__PURE__*/ defineContainer<JSX.SignalInput>('signal-input', undefined, [
   'value',
   'placeholder',

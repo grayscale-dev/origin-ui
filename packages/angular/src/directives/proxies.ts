@@ -8,6 +8,7 @@ import type { Components } from '@signal-web-ui/core/dist/custom-elements';
 
 import { defineCustomElement as defineSignalButton } from '@signal-web-ui/core/dist/custom-elements/signal-button.js';
 import { defineCustomElement as defineSignalCombobox } from '@signal-web-ui/core/dist/custom-elements/signal-combobox.js';
+import { defineCustomElement as defineSignalFileUpload } from '@signal-web-ui/core/dist/custom-elements/signal-file-upload.js';
 import { defineCustomElement as defineSignalInput } from '@signal-web-ui/core/dist/custom-elements/signal-input.js';
 import { defineCustomElement as defineSignalModal } from '@signal-web-ui/core/dist/custom-elements/signal-modal.js';
 import { defineCustomElement as defineSignalTable } from '@signal-web-ui/core/dist/custom-elements/signal-table.js';
@@ -68,6 +69,40 @@ export declare interface SignalCombobox extends Components.SignalCombobox {
   queryChange: EventEmitter<CustomEvent<{ query: string }>>;
 
   clear: EventEmitter<CustomEvent<void>>;
+}
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalFileUpload,
+  inputs: ['accept', 'multiple', 'maxSize', 'maxFiles', 'value', 'previews', 'progress', 'disabled']
+})
+@Component({
+  selector: 'signal-file-upload',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['accept', 'multiple', 'maxSize', 'maxFiles', 'value', 'previews', 'progress', 'disabled'],
+  outputs: ['select', 'upload', 'remove'],
+})
+export class SignalFileUpload {
+  protected el: HTMLSignalFileUploadElement;
+  @Output() select = new EventEmitter<CustomEvent<{ files: File[] }>>();
+  @Output() upload = new EventEmitter<CustomEvent<{ files: File[] }>>();
+  @Output() remove = new EventEmitter<CustomEvent<{ file: File }>>();
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalFileUpload extends Components.SignalFileUpload {
+
+  select: EventEmitter<CustomEvent<{ files: File[] }>>;
+
+  upload: EventEmitter<CustomEvent<{ files: File[] }>>;
+
+  remove: EventEmitter<CustomEvent<{ file: File }>>;
 }
 
 
@@ -171,5 +206,4 @@ export declare interface SignalTable extends Components.SignalTable {
 
   filterChange: EventEmitter<CustomEvent<{ filters: Record<string, string> }>>;
 }
-
 

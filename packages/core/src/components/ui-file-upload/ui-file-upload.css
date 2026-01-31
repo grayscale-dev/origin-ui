@@ -1,0 +1,119 @@
+:host {
+  display: block;
+  font-family: var(--signal-font-sans);
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--signal-space-3);
+}
+
+.dropzone {
+  display: flex;
+  min-height: 120px;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--signal-space-2);
+  border-radius: var(--signal-radius-md);
+  border: 1px dashed var(--signal-color-border);
+  background: var(--signal-color-muted);
+  padding: var(--signal-space-5) var(--signal-space-4);
+  text-align: center;
+  color: var(--signal-color-subtle);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.dropzone.dragging {
+  border-color: var(--signal-color-accent);
+  background: color-mix(in oklab, var(--signal-color-accent) 12%, var(--signal-color-muted));
+}
+
+.dropzone.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--signal-color-text);
+}
+
+.hint {
+  font-size: 12px;
+}
+
+.input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: var(--signal-space-2);
+  font-size: 12px;
+  color: var(--signal-color-subtle);
+}
+
+.progress-bar {
+  height: 6px;
+  flex: 1;
+  border-radius: var(--signal-radius-full);
+  background: var(--signal-color-accent);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--signal-space-2);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--signal-space-3);
+  border-radius: var(--signal-radius-md);
+  border: 1px solid var(--signal-color-border);
+  background: var(--signal-color-surface);
+  padding: var(--signal-space-2) var(--signal-space-3);
+  font-size: 13px;
+}
+
+.item-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.item-name {
+  font-weight: 600;
+  color: var(--signal-color-text);
+}
+
+.item-size {
+  font-size: 12px;
+  color: var(--signal-color-subtle);
+}
+
+.item-remove {
+  border: none;
+  background: transparent;
+  color: var(--signal-color-subtle);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.item-remove:hover {
+  color: var(--signal-color-text);
+}
