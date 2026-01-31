@@ -28,7 +28,7 @@ export default class SignalFileUpload extends Component {
 
   bindEvents() {
     if (!this.element) return;
-    this.element.addEventListener("select", (event) => this.args.onSelect?.(event));
+    this.element.addEventListener("fileSelect", (event) => this.args.onSelect?.(event));
     this.element.addEventListener("upload", (event) => this.args.onUpload?.(event));
     this.element.addEventListener("remove", (event) => this.args.onRemove?.(event));
   }

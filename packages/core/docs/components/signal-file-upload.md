@@ -14,7 +14,7 @@ A drag-and-drop file upload component with optional previews and progress displa
 <signal-file-upload id="uploader"></signal-file-upload>
 <script type="module">
   const uploader = document.querySelector('#uploader');
-  uploader.addEventListener('select', (event) => {
+  uploader.addEventListener('fileSelect', (event) => {
     console.log('selected files', event.detail.files);
   });
 </script>
@@ -33,7 +33,7 @@ A drag-and-drop file upload component with optional previews and progress displa
 
 ## Events
 
-- `select`: `{ files: File[] }`
+- `fileSelect`: `{ files: File[] }`
 - `upload`: `{ files: File[] }`
 - `remove`: `{ file: File }`
 

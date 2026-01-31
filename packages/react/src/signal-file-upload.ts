@@ -14,20 +14,20 @@ import { createComponent } from '@stencil/react-output-target/runtime';
 import React from 'react';
 
 export type SignalFileUploadEvents = {
-  onSelect: EventName<SignalFileUploadCustomEvent<{ files: File[] }>>;
-  onUpload: EventName<SignalFileUploadCustomEvent<{ files: File[] }>>;
-  onRemove: EventName<SignalFileUploadCustomEvent<{ file: File }>>;
+    onFileSelect: EventName<SignalFileUploadCustomEvent<{ files: File[] }>>,
+    onUpload: EventName<SignalFileUploadCustomEvent<{ files: File[] }>>,
+    onRemove: EventName<SignalFileUploadCustomEvent<{ file: File }>>
 };
 
 export const SignalFileUpload: StencilReactComponent<SignalFileUploadElement, SignalFileUploadEvents> = /*@__PURE__*/ createComponent<SignalFileUploadElement, SignalFileUploadEvents>({
-  tagName: 'signal-file-upload',
-  elementClass: SignalFileUploadElement,
-  // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
-  react: React,
-  events: {
-    onSelect: 'select',
-    onUpload: 'upload',
-    onRemove: 'remove'
-  } as SignalFileUploadEvents,
-  defineCustomElement: defineSignalFileUpload
+    tagName: 'signal-file-upload',
+    elementClass: SignalFileUploadElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {
+        onFileSelect: 'fileSelect',
+        onUpload: 'upload',
+        onRemove: 'remove'
+    } as SignalFileUploadEvents,
+    defineCustomElement: defineSignalFileUpload
 });

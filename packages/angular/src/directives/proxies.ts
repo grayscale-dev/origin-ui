@@ -74,19 +74,19 @@ export declare interface SignalCombobox extends Components.SignalCombobox {
 
 @ProxyCmp({
   defineCustomElementFn: defineSignalFileUpload,
-  inputs: ['accept', 'multiple', 'maxSize', 'maxFiles', 'value', 'previews', 'progress', 'disabled']
+  inputs: ['accept', 'disabled', 'maxFiles', 'maxSize', 'multiple', 'previews', 'progress', 'value']
 })
 @Component({
   selector: 'signal-file-upload',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['accept', 'multiple', 'maxSize', 'maxFiles', 'value', 'previews', 'progress', 'disabled'],
-  outputs: ['select', 'upload', 'remove'],
+  inputs: ['accept', 'disabled', 'maxFiles', 'maxSize', 'multiple', 'previews', 'progress', 'value'],
+  outputs: ['fileSelect', 'upload', 'remove'],
 })
 export class SignalFileUpload {
   protected el: HTMLSignalFileUploadElement;
-  @Output() select = new EventEmitter<CustomEvent<{ files: File[] }>>();
+  @Output() fileSelect = new EventEmitter<CustomEvent<{ files: File[] }>>();
   @Output() upload = new EventEmitter<CustomEvent<{ files: File[] }>>();
   @Output() remove = new EventEmitter<CustomEvent<{ file: File }>>();
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
@@ -98,7 +98,7 @@ export class SignalFileUpload {
 
 export declare interface SignalFileUpload extends Components.SignalFileUpload {
 
-  select: EventEmitter<CustomEvent<{ files: File[] }>>;
+  fileSelect: EventEmitter<CustomEvent<{ files: File[] }>>;
 
   upload: EventEmitter<CustomEvent<{ files: File[] }>>;
 
@@ -206,4 +206,5 @@ export declare interface SignalTable extends Components.SignalTable {
 
   filterChange: EventEmitter<CustomEvent<{ filters: Record<string, string> }>>;
 }
+
 

@@ -53,17 +53,14 @@ export const SignalFileUpload: StencilVueComponent<JSX.SignalFileUpload> = /*@__
   'previews',
   'progress',
   'disabled',
-  'select',
+  'fileSelect',
   'upload',
   'remove'
 ], [
-  'select',
+  'fileSelect',
   'upload',
   'remove'
 ]);
-
-
-
 
 
 export const SignalInput: StencilVueComponent<JSX.SignalInput> = /*@__PURE__*/ defineContainer<JSX.SignalInput>('signal-input', undefined, [

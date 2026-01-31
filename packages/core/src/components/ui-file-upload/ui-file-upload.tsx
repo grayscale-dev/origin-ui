@@ -1,6 +1,8 @@
 import { Component, Element, Event, h, Prop, State } from "@stencil/core";
 import type { EventEmitter } from "@stencil/core";
 
+let fileUploadId = 0;
+
 export type FilePreview = {
   name: string;
   url?: string;
@@ -26,8 +28,10 @@ export class SignalFileUpload {
 
   @State() dragging = false;
 
-  @Event({ eventName: "select", bubbles: true, composed: true })
-  select!: EventEmitter<{ files: File[] }>;
+  private readonly inputId = `signal-file-upload-input-${fileUploadId++}`;
+
+  @Event({ eventName: "fileSelect", bubbles: true, composed: true })
+  fileSelect!: EventEmitter<{ files: File[] }>;
   @Event({ eventName: "upload", bubbles: true, composed: true })
   upload!: EventEmitter<{ files: File[] }>;
   @Event({ eventName: "remove", bubbles: true, composed: true })
@@ -42,7 +46,7 @@ export class SignalFileUpload {
     if (this.maxFiles) {
       files = files.slice(0, this.maxFiles);
     }
-    this.select.emit({ files });
+    this.fileSelect.emit({ files });
     this.upload.emit({ files });
   };
 
@@ -92,6 +96,8 @@ export class SignalFileUpload {
             dragging: this.dragging,
             disabled: this.disabled,
           }}
+          aria-label={this.labelText}
+          htmlFor={this.inputId}
           onDragOver={this.handleDragOver}
           onDragLeave={this.handleDragLeave}
           onDrop={this.handleDrop}
@@ -104,6 +110,7 @@ export class SignalFileUpload {
             part="input"
             class="input"
             type="file"
+            id={this.inputId}
             accept={this.accept}
             multiple={this.multiple}
             disabled={this.disabled}
