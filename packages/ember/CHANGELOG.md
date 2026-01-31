@@ -1,5 +1,12 @@
 # @signal-web-ui/ember
 
+## 0.1.9
+
+### Patch Changes
+
+- Updated dependencies [af0fd3b]
+  - @signal-web-ui/core@0.1.9
+
 ## 0.1.8
 
 ### Patch Changes

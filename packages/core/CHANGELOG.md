@@ -1,5 +1,11 @@
 # @signal-web-ui/core
 
+## 0.1.9
+
+### Patch Changes
+
+- af0fd3b: Create new file upload component
+
 ## 0.1.8
 
 ### Patch Changes
