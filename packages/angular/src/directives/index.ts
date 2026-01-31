@@ -7,7 +7,12 @@ export const DIRECTIVES = [
   d.SignalDataTable,
   d.SignalFeatureTable,
   d.SignalFileUpload,
+  d.SignalHeading,
   d.SignalInput,
+  d.SignalListItem,
   d.SignalModal,
-  d.SignalTable
+  d.SignalSkeleton,
+  d.SignalTable,
+  d.SignalText,
+  d.SignalTooltip
 ];

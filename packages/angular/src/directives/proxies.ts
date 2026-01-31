@@ -11,9 +11,14 @@ import { defineCustomElement as defineSignalCombobox } from '@signal-web-ui/core
 import { defineCustomElement as defineSignalDataTable } from '@signal-web-ui/core/dist/custom-elements/signal-data-table.js';
 import { defineCustomElement as defineSignalFeatureTable } from '@signal-web-ui/core/dist/custom-elements/signal-feature-table.js';
 import { defineCustomElement as defineSignalFileUpload } from '@signal-web-ui/core/dist/custom-elements/signal-file-upload.js';
+import { defineCustomElement as defineSignalHeading } from '@signal-web-ui/core/dist/custom-elements/signal-heading.js';
 import { defineCustomElement as defineSignalInput } from '@signal-web-ui/core/dist/custom-elements/signal-input.js';
+import { defineCustomElement as defineSignalListItem } from '@signal-web-ui/core/dist/custom-elements/signal-list-item.js';
 import { defineCustomElement as defineSignalModal } from '@signal-web-ui/core/dist/custom-elements/signal-modal.js';
+import { defineCustomElement as defineSignalSkeleton } from '@signal-web-ui/core/dist/custom-elements/signal-skeleton.js';
 import { defineCustomElement as defineSignalTable } from '@signal-web-ui/core/dist/custom-elements/signal-table.js';
+import { defineCustomElement as defineSignalText } from '@signal-web-ui/core/dist/custom-elements/signal-text.js';
+import { defineCustomElement as defineSignalTooltip } from '@signal-web-ui/core/dist/custom-elements/signal-tooltip.js';
 @ProxyCmp({
   defineCustomElementFn: defineSignalButton,
   inputs: ['disabled', 'loading', 'size', 'type', 'variant']
@@ -180,6 +185,29 @@ export declare interface SignalFileUpload extends Components.SignalFileUpload {
 
 
 @ProxyCmp({
+  defineCustomElementFn: defineSignalHeading,
+  inputs: ['align', 'level']
+})
+@Component({
+  selector: 'signal-heading',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['align', 'level'],
+})
+export class SignalHeading {
+  protected el: HTMLSignalHeadingElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalHeading extends Components.SignalHeading {}
+
+
+@ProxyCmp({
   defineCustomElementFn: defineSignalInput,
   inputs: ['autocomplete', 'disabled', 'inset', 'name', 'placeholder', 'readonly', 'required', 'type', 'value']
 })
@@ -207,6 +235,34 @@ export declare interface SignalInput extends Components.SignalInput {
   valueInput: EventEmitter<CustomEvent<{ value: string }>>;
 
   valueChange: EventEmitter<CustomEvent<{ value: string }>>;
+}
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalListItem,
+  inputs: ['disabled', 'heading', 'href', 'selected', 'subtitle']
+})
+@Component({
+  selector: 'signal-list-item',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['disabled', 'heading', 'href', 'selected', 'subtitle'],
+  outputs: ['itemClick'],
+})
+export class SignalListItem {
+  protected el: HTMLSignalListItemElement;
+  @Output() itemClick = new EventEmitter<CustomEvent<void>>();
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalListItem extends Components.SignalListItem {
+
+  itemClick: EventEmitter<CustomEvent<void>>;
 }
 
 
@@ -245,6 +301,29 @@ export declare interface SignalModal extends Components.SignalModal {
 
 
 @ProxyCmp({
+  defineCustomElementFn: defineSignalSkeleton,
+  inputs: ['description', 'heading', 'lines', 'media', 'variant']
+})
+@Component({
+  selector: 'signal-skeleton',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['description', 'heading', 'lines', 'media', 'variant'],
+})
+export class SignalSkeleton {
+  protected el: HTMLSignalSkeletonElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalSkeleton extends Components.SignalSkeleton {}
+
+
+@ProxyCmp({
   defineCustomElementFn: defineSignalTable,
   inputs: ['caption', 'columns', 'emptyText', 'filterable', 'filters', 'loading', 'reorderable', 'rowKey', 'rows', 'searchable']
 })
@@ -279,5 +358,51 @@ export declare interface SignalTable extends Components.SignalTable {
 
   filterChange: EventEmitter<CustomEvent<{ filters: Record<string, string> }>>;
 }
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalText,
+  inputs: ['clampLines', 'truncate']
+})
+@Component({
+  selector: 'signal-text',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['clampLines', 'truncate'],
+})
+export class SignalText {
+  protected el: HTMLSignalTextElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalText extends Components.SignalText {}
+
+
+@ProxyCmp({
+  defineCustomElementFn: defineSignalTooltip,
+  inputs: ['content', 'delay', 'disabled', 'interactive', 'placement', 'variant']
+})
+@Component({
+  selector: 'signal-tooltip',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: [{ name: 'content', required: true }, 'delay', 'disabled', 'interactive', 'placement', 'variant'],
+})
+export class SignalTooltip {
+  protected el: HTMLSignalTooltipElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface SignalTooltip extends Components.SignalTooltip {}
 
 

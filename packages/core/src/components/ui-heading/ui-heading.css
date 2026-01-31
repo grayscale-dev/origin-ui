@@ -1,0 +1,41 @@
+:host {
+  display: block;
+}
+
+.root {
+  margin: 0;
+  color: var(--signal-text, #111827);
+  font-weight: 600;
+}
+
+h1.root {
+  font-size: 2rem;
+}
+
+h2.root {
+  font-size: 1.5rem;
+}
+
+h3.root {
+  font-size: 1.25rem;
+}
+
+h4.root {
+  font-size: 1.05rem;
+}
+
+h5.root {
+  font-size: 0.95rem;
+}
+
+h6.root {
+  font-size: 0.9rem;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}

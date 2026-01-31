@@ -5,6 +5,7 @@ export type {
   SignalFeatureTableCustomEvent,
   SignalFileUploadCustomEvent,
   SignalInputCustomEvent,
+  SignalListItemCustomEvent,
   SignalModalCustomEvent,
   SignalTableCustomEvent
 } from "./components";

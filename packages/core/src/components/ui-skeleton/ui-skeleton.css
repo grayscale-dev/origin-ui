@@ -1,0 +1,77 @@
+:host {
+  display: block;
+}
+
+.root {
+  border: 1px solid var(--signal-border, #e5e7eb);
+  border-radius: 10px;
+  background: var(--signal-surface, #ffffff);
+  padding: 16px;
+  color: var(--signal-text, #111827);
+}
+
+.panel {
+  background: var(--signal-muted, #f3f4f6);
+  border: 1px solid var(--signal-border, #e5e7eb);
+}
+
+.panel.error {
+  border-color: var(--signal-danger, #ef4444);
+}
+
+.panel-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.panel-description {
+  font-size: 0.85rem;
+  color: var(--signal-subtle, #6b7280);
+  margin-bottom: 8px;
+}
+
+.retry {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--signal-border, #e5e7eb);
+  background: #fff;
+  cursor: pointer;
+}
+
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.media {
+  height: 96px;
+  width: 100%;
+  border-radius: 10px;
+  background: var(--signal-muted, #f3f4f6);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+.line {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--signal-muted, #f3f4f6);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+.line-first {
+  width: 75%;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

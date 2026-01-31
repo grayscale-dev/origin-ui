@@ -104,6 +104,12 @@ export const SignalFileUpload: StencilVueComponent<JSX.SignalFileUpload> = /*@__
 ]);
 
 
+export const SignalHeading: StencilVueComponent<JSX.SignalHeading> = /*@__PURE__*/ defineContainer<JSX.SignalHeading>('signal-heading', undefined, [
+  'level',
+  'align'
+]);
+
+
 export const SignalInput: StencilVueComponent<JSX.SignalInput> = /*@__PURE__*/ defineContainer<JSX.SignalInput>('signal-input', undefined, [
   'value',
   'placeholder',
@@ -119,6 +125,18 @@ export const SignalInput: StencilVueComponent<JSX.SignalInput> = /*@__PURE__*/ d
 ], [
   'valueInput',
   'valueChange'
+]);
+
+
+export const SignalListItem: StencilVueComponent<JSX.SignalListItem> = /*@__PURE__*/ defineContainer<JSX.SignalListItem>('signal-list-item', undefined, [
+  'heading',
+  'subtitle',
+  'href',
+  'selected',
+  'disabled',
+  'itemClick'
+], [
+  'itemClick'
 ]);
 
 
@@ -149,6 +167,15 @@ export const SignalModal: StencilVueComponent<JSX.SignalModal> = /*@__PURE__*/ d
 ]);
 
 
+export const SignalSkeleton: StencilVueComponent<JSX.SignalSkeleton> = /*@__PURE__*/ defineContainer<JSX.SignalSkeleton>('signal-skeleton', undefined, [
+  'variant',
+  'lines',
+  'media',
+  'heading',
+  'description'
+]);
+
+
 export const SignalTable: StencilVueComponent<JSX.SignalTable> = /*@__PURE__*/ defineContainer<JSX.SignalTable>('signal-table', undefined, [
   'columns',
   'rows',
@@ -169,6 +196,22 @@ export const SignalTable: StencilVueComponent<JSX.SignalTable> = /*@__PURE__*/ d
   'reorder',
   'searchChange',
   'filterChange'
+]);
+
+
+export const SignalText: StencilVueComponent<JSX.SignalText> = /*@__PURE__*/ defineContainer<JSX.SignalText>('signal-text', undefined, [
+  'truncate',
+  'clampLines'
+]);
+
+
+export const SignalTooltip: StencilVueComponent<JSX.SignalTooltip> = /*@__PURE__*/ defineContainer<JSX.SignalTooltip>('signal-tooltip', undefined, [
+  'content',
+  'variant',
+  'placement',
+  'delay',
+  'interactive',
+  'disabled'
 ]);
 
 

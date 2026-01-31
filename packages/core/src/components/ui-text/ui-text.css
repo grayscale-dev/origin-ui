@@ -1,0 +1,16 @@
+:host {
+  display: block;
+}
+
+.root {
+  margin: 0;
+  color: var(--signal-text, #111827);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
